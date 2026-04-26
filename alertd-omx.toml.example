@@ -1,0 +1,27 @@
+# NWS asks API clients to include a useful User-Agent with contact info.
+user_agent = "alertd-omx/0.1 (you@example.com)"
+
+# Do not poll more frequently than every 30 seconds.
+poll_seconds = 60
+
+# NWS county or forecast zone IDs. County zones look like state abbreviation +
+# C + three digit county FIPS, e.g. ALC007.
+zones = ["ALC007"]
+
+# SAME/FIPS county codes are six digits. Leave empty if zones are enough.
+same_codes = []
+
+events = [
+  "Tornado Warning",
+  "Tornado Watch",
+  "Severe Thunderstorm Warning",
+  "Severe Thunderstorm Watch",
+]
+
+[actions]
+notify = true
+audio = true
+set_volume = true
+volume_percent = 100
+open_radar = false
+radar_url = "https://radar.weather.gov/"

@@ -1,0 +1,13 @@
+[Unit]
+Description=NOAA/NWS desktop alert daemon for Omarchy
+After=network-online.target graphical-session.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/alertd-omx daemon
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=default.target
